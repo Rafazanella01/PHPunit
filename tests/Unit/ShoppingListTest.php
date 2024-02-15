@@ -49,6 +49,15 @@ use PHPUnit\Framework\TestCase;
             $items = $lista->getItems();
             $this->assertEquals("Maça", $items[1]);
         }
+
+        public function testClearItems()
+        {
+            $lista = new ShoppingList();
+            $lista->addItem("Melão");
+            $lista->addItem("Bergamota");
+            $lista->clearItems();
+            $this->assertEmpty($lista->getItems());
+        }
        
     }
 

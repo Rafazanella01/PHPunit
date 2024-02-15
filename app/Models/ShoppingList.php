@@ -33,4 +33,9 @@ class ShoppingList extends Model
             unset($this->listaCompras[$id]);
         }
     }
+
+    public function clearItems()
+    {
+        $this->listaCompras = [];
+    }
 }
