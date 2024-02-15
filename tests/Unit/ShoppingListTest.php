@@ -58,7 +58,29 @@ use PHPUnit\Framework\TestCase;
             $lista->clearItems();
             $this->assertEmpty($lista->getItems());
         }
+
+        public function testItemDuplicado()
+        {
+            $duplicado = ['Maça'];
+
+            $lista = new ShoppingList();
+            $lista->addItem("Maça");
+            $lista->addItem("Maça");
+
+            $this->assertEquals($duplicado, $lista->getItems());
+        }
        
+        public function testRemoveInexistente()
+        {
+            $esperado = ["Banana"];
+
+            $lista = new ShoppingList();
+            $lista->addItem("Banana");
+
+            $lista->removeItem(1);
+
+            $this->assertEquals($esperado, $lista->getItems());
+        }
     }
 
 ?> 

@@ -18,7 +18,10 @@ class ShoppingList extends Model
 
     public function addItem(string $item)
     {
-        $this->listaCompras[] = $item;
+        if(!in_array($item, $this->listaCompras)){
+             $this->listaCompras[] = $item;
+        }
+        
         return $item;
     }
 
