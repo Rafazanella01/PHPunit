@@ -31,7 +31,7 @@ class StringManipulator extends Model
             return $string;
         }
 
-        return ucwords($string);;
+        return ucwords($string);
     }
 
     public function concatenateStrings(string $string1, string $string2)

@@ -64,11 +64,15 @@ use PHPUnit\Framework\TestCase;
 
         public function testCapitalizeStrings()
         {
-            $texto = 'o rafa é lindo';
+            $texto1 = 'o rafa é lindo';
+            $texto2 = ' ';
             $classe = new StringManipulator();
 
-            $capitalize = $classe->capitalizeString($texto);
-            $this->assertEquals('O Rafa é Lindo', $capitalize);
+            $capitalize1 = $classe->capitalizeString($texto1);
+            $capitalize2 = $classe->capitalizeString($texto2);
+
+            $this->assertEquals('O Rafa é Lindo', $capitalize1);
+            $this->assertEquals(' ', $capitalize2);
         }
 
         public function testConcatenateStrings()
