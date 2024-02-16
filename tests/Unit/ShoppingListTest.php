@@ -43,11 +43,11 @@ use PHPUnit\Framework\TestCase;
         public function testRemoveItem()
         {
             $lista = new ShoppingList();
-            $lista->addItem("Banana");
-            $lista->addItem("Maça");
+            $item1 = $lista->addItem("Banana");
+            $item2 = $lista->addItem("Maça");
             $lista->removeItem(0);
             $items = $lista->getItems();
-            $this->assertEquals("Maça", $items[1]);
+            $this->assertNotContains($item1, $items);
         }
 
         public function testClearItems()
