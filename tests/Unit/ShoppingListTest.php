@@ -26,8 +26,11 @@ use PHPUnit\Framework\TestCase;
             $lista = new ShoppingList();
             $addItem1 = $lista->addItem("Banana");
             $addItem2 = $lista->addItem("Maça");
-            $this->assertEquals("Banana", $addItem1);
-            $this->assertEquals("Maça", $addItem2);
+        
+            $listaAtual = $lista->getItems();
+        
+            $this->assertEquals("Banana", $listaAtual[0]);
+            $this->assertEquals("Maça", $listaAtual[1]);
         }
 
         public function testGetItems()
